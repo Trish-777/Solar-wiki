@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Solar ROI Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><a href="index.html">Home</a></nav>
+
+<div class="container">
+<h1>Solar ROI Calculator</h1>
+
+<div class="card">
+<label>System Cost ($):</label><br>
+<input type="number" id="cost"><br>
+
+<label>Annual Savings ($):</label><br>
+<input type="number" id="savings"><br><br>
+
+<button onclick="calculate()">Calculate ROI</button>
+
+<p id="result"></p>
+</div>
+</div>
+
+<script>
+function calculate() {
+    let cost = document.getElementById("cost").value;
+    let savings = document.getElementById("savings").value;
+    let years = cost / savings;
+    document.getElementById("result").innerHTML =
+        "Estimated Payback Period: " + years.toFixed(1) + " years";
+}
+</script>
+
+</body>
+</html>
